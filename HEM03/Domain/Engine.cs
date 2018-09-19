@@ -15,15 +15,11 @@ namespace HEM03.Domain
 
         public void RaiseSpeed()
         {
-
-            Console.WriteLine("You will now raise your speed. If you are in your spaceship, " +
-                "call your mum and tell her that you love her. This speed is very fast and you may die..." +
-                "If you are in your GolfCar, just sitt back and enyoy the ride");
-
-     
-                
-
+                Console.WriteLine("The engine will accelerate and you will now raise your speed. " +
+                    "Call your mum and tell her that you love her." +
+                    " This speed is very fast and you may die...");
         }
+        
     }
     
 }

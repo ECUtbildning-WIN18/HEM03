@@ -15,17 +15,13 @@ namespace HEM03.Domain
             GolfCar AdamsGolfCar = new GolfCar("spaceGolf", "BAA111", "green",
                 GolfCarEngine, Owner);
 
-            Console.WriteLine("This is info about the GolfCar: ");
-            Console.WriteLine("Owner: " + Owner.Owner);
-            Console.WriteLine("Colour: " + AdamsGolfCar.GolfCarColor);
-            Console.WriteLine("Registration number: " + AdamsGolfCar.RegistrationNumber);
-            Console.WriteLine("Model: " + AdamsGolfCar.Model);
-            Console.WriteLine("Engine type: " + GolfCarEngine.EngineType);
+            AdamsGolfCar.GetInfoAboutGolfCar();
 
-            //BSGEngine.RaiseSpeed();
-            GolfCarEngine.RaiseSpeed();
+            BattlestarGalactia.GetInfoAboutBattlestarGalactica();
+            
 
-
+            BSGEngine.RaiseSpeed();
+           
             Console.ReadKey();
         }
     }

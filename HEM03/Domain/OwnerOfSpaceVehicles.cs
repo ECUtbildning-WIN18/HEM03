@@ -1,4 +1,6 @@
-﻿namespace HEM03.Domain
+﻿using System;
+
+namespace HEM03.Domain
 {
     class OwnerOfSpaceVehicles
     {
