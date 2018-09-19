@@ -1,0 +1,25 @@
+﻿Uppgift
+
+Du har fått i uppdrag av Commander Adama, befälhavare på Battlestar Galactica, 
+att ta fram programvara till hans skepp. 
+Programvaran behöver även kunna användas till Adams golfbil som han använder för att ta sig runt skeppet.
+
+Både skeppet och golfbilen är fordon. De har båda en modellbeteckning och ett registreringsnummer. 
+De har båda en motor, dock inte samma typ av motor. Galactica har en FTL (faster than light) drive, 
+medan golfbilen har en Yamaha G19.
+
+När vi säger åt skeppet att gasa, ska skeppet skicka ett meddelande till motorn att generera mer kraft.
+
+Både skeppet och golfbilen har en ägare - Adama. Adamas favoritfärg är grön.
+
+Utöver Adama, som är skeppets befälhavare, behöver vi även hålla reda på första styrman. 
+Skeppet har alltså både en befälhavare och en första styrman.
+
+Din uppgift är att, i kod, specificera de klasser, 
+medlemsvariabler och metoder som behövs för att implementera ovan funktionalitet. 
+För tips hur du kan göra, se texten ovan.
+
+Gör dina ändringar i den branch du skapade i sektionen Förberedelser. 
+När du känner dig redo att dela med dig av din kod till andra, 
+pusha till GitHub och skapa en PR. När du vill att läraren ska utföra en kodgranskning, 
+lägg till etiketten “ready for review” och begär en granskning från rtublen.
