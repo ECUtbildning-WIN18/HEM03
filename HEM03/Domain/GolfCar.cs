@@ -14,13 +14,11 @@ namespace HEM03.Domain
             : base(model, registrationNumber)
         {
             GolfCarColor = golfCarColor;
-            this.Owner = owner;
-            this.Engine = engineType;
-
-
+            Owner = owner;
+            Engine = engineType;  
         }
 
-        public void GetInfoAboutGolfCar()
+        public void GetInfoAboutGolfCar() //info about golfcar
         {
             Console.WriteLine("This is info about the GolfCar: ");
             Console.WriteLine("Owner: " + Owner.Owner);
@@ -29,6 +27,14 @@ namespace HEM03.Domain
             Console.WriteLine("Model: " + Model);
             Console.WriteLine("Engine type: " + Engine.EngineType);
             Console.WriteLine(" ");
+        }
+
+
+        public void Accelerate() //increase engine speed and prompt the passenger
+        {
+            Engine.RaiseSpeed();
+            Console.WriteLine("Sit back and enjoy. Remember the speed limit, but in a golfcar" +
+                " this might not be a problem...!");
         }
     }
 }

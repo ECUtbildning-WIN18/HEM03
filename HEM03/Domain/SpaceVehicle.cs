@@ -1,5 +1,4 @@
-﻿using System;
-namespace HEM03.Domain
+﻿namespace HEM03.Domain
 {
     class SpaceVehicle
     {

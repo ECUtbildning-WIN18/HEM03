@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace HEM03.Domain
 {
@@ -13,13 +12,11 @@ namespace HEM03.Domain
             EngineType = engineType;
         }
 
-        public void RaiseSpeed()
+        public void RaiseSpeed() //raise engine speed
         {
-                Console.WriteLine("The engine will accelerate and you will now raise your speed. " +
-                    "Call your mum and tell her that you love her." +
-                    " This speed is very fast and you may die...");
+            Console.WriteLine("The engine is now working at full power");
         }
-        
+
     }
     
 }

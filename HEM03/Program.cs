@@ -16,12 +16,12 @@ namespace HEM03.Domain
                 GolfCarEngine, Owner);
 
             AdamsGolfCar.GetInfoAboutGolfCar();
-
             BattlestarGalactia.GetInfoAboutBattlestarGalactica();
-            
 
-            BSGEngine.RaiseSpeed();
-           
+
+            BattlestarGalactia.Accelerate();
+            AdamsGolfCar.Accelerate();
+                      
             Console.ReadKey();
         }
     }
