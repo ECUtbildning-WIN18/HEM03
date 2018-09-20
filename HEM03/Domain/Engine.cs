@@ -5,48 +5,48 @@ using System.Text;
 namespace HEM03.Domain
 {
     public enum EngineTypes { Yamaha_G19 , FTL};
+
     class Engine
     {
-        private EngineTypes m_engineType;
-        private float m_maxVelocity, m_currentVelocity;
-        public Engine(EngineTypes type)
+        public EngineTypes engineType { get; private set; }
+        private float maxVelocity;
+        private float currentVelocity;
+
+        public Engine(EngineTypes engineType)
         {
-            this.m_engineType = type;
-            this.m_maxVelocity = (float)type*999 + 1;
-            this.m_currentVelocity = 0;
+            this.engineType = engineType;
+            maxVelocity = (float)engineType * 999 + 1;
+            currentVelocity = 0;
         }
+
         public void Gas(float velocityIncrement)
         {
-            if (this.m_maxVelocity != this.m_currentVelocity)
+            if (currentVelocity != maxVelocity)
             {
-                if (this.m_currentVelocity + velocityIncrement < this.m_maxVelocity)
+                if (currentVelocity + velocityIncrement < maxVelocity)
                 {
-                    this.m_currentVelocity += velocityIncrement;
+                    currentVelocity += velocityIncrement;
                 }
                 else
                 {
-                    this.m_currentVelocity = this.m_maxVelocity;
+                    currentVelocity = maxVelocity;
                 }
             }
         }
+
         public void Break(float velocityDecrement)
         {
-            if (this.m_currentVelocity == 0)
+            if (currentVelocity == 0)
             {
-                if (this.m_currentVelocity - velocityDecrement <= 0)
+                if (currentVelocity - velocityDecrement <= 0)
                 {
-                    this.m_currentVelocity = 0;
+                    currentVelocity = 0;
                 }
                 else
                 {
-                    this.m_currentVelocity -= velocityDecrement;
+                    currentVelocity -= velocityDecrement;
                 }
             }
-
-        }
-        public EngineTypes GetEngineType()
-        {
-            return this.m_engineType;
         }
     }
 }

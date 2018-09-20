@@ -6,32 +6,34 @@ namespace HEM03.Domain
 {
     class Vehicle
     {
-        private string m_model, m_registrationNumber;
-        private Engine m_engine;
-        private List<int> m_permisions;
+        public string registrationNumber { get; private set; }
+        private string model { get; }
+        private Engine engine;
+        private HashSet<int> permisions = new HashSet<int>();
+
         public Vehicle(string model,string registrationNumber,EngineTypes engineType)
         {
-            this.m_engine = new Engine(engineType);
-            this.m_model = model;
-            this.m_registrationNumber = registrationNumber;
-            this.m_permisions = new List<int>();
+            engine = new Engine(engineType);
+            this.model = model;
+            this.registrationNumber = registrationNumber;
         }
-        public void addPermission(int crewMemberId)
+
+        public void AddPermission(int crewMemberId)
         {
-            this.m_permisions.Add(crewMemberId);
+            permisions.Add(crewMemberId);
         }
 
         public void Navigate(Action action, CrewMember crewMember)
         {
-            if(checkPermission(crewMember.GetCrewMemberId()))
+            if(CheckPermission(crewMember.crewMemberId))
             {
                 if(action == Action.Gas)
                 {
-                    this.m_engine.Gas((int)this.m_engine.GetEngineType()*9+1);
+                    engine.Gas((int)engine.engineType * 9 + 1);
                 }
                 if(action == Action.Break)
                 {
-                    this.m_engine.Break((int)this.m_engine.GetEngineType() * 4 + 1);
+                    engine.Break((int)engine.engineType * 4 + 1);
                 }
             }
             else
@@ -40,21 +42,11 @@ namespace HEM03.Domain
             }
         }
         
-        private bool checkPermission(int crewMemberId)
+        private bool CheckPermission(int crewMemberId)
         {
-            if(this.m_permisions.Contains(crewMemberId))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return permisions.Contains(crewMemberId);
         }
-        public string GetRegistrationNumber()
-        {
-            return this.m_registrationNumber;
-        }
+
         public virtual string GetVehicleType()
         {
             return "default vehicle type";

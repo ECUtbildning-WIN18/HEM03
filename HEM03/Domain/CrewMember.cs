@@ -6,39 +6,23 @@ namespace HEM03.Domain
 {
     class CrewMember
     {
-        private string m_name,m_rank, m_trivia;
-        private int m_crewMemberId;
+        public string name { get; private set; }
+        public string trivia { get; set; }
+        private string rank;
+        public int crewMemberId { get; set; }
         
         public CrewMember(string name, string rank)
         {
-            this.m_name = name;
-            this.m_rank = rank;
-            this.m_trivia = "No info";
-            this.m_crewMemberId = -1;
+            this.name = name;
+            this.rank = rank;
+            trivia = "No info";
+            crewMemberId = -1;
         }
-        public void setTrivia(string trivia)
+
+        public void AddVehiclePermission(Vehicle vehicle)
         {
-            this.m_trivia = trivia;
+            vehicle.AddPermission(crewMemberId);     
         }
-        public string getTrivia()
-        {
-            return this.m_trivia;
-        }
-        public void setCrewMemberId(int crewMemberId)
-        {
-            this.m_crewMemberId = crewMemberId;
-        }
-        public int GetCrewMemberId()
-        {
-            return this.m_crewMemberId;
-        }
-        public void addVehiclePermission(Vehicle vehicle)
-        {
-            vehicle.addPermission(this.m_crewMemberId);     
-        }
-        public string GetName()
-        {
-            return this.m_name;
-        }
+
     }
 }

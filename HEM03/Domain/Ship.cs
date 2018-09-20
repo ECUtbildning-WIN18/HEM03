@@ -11,7 +11,7 @@ namespace HEM03.Domain
         {
 
         }
-        //gets and sets
+
         public override string GetVehicleType()
         {
             return "Ship";
