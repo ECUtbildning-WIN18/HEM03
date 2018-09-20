@@ -6,23 +6,17 @@ namespace HEM03.Domain
     {
         static void Main(string[] args)
         {
-            OwnerOfSpaceVehicles Owner = new OwnerOfSpaceVehicles("William Adams");
-            Engine BSGEngine = new Engine("FTL (Faster than light)");
-            Engine GolfCarEngine = new Engine("Yamaha G19");
-
             BattlestarGalactia BattlestarGalactia = new BattlestarGalactia("Spaceship", "AAA111",
-                "Itwill Beme", BSGEngine, Owner);
+                "Itwill Beme", "FTL", "William Adams");
+
             GolfCar AdamsGolfCar = new GolfCar("spaceGolf", "BAA111", "green",
-                GolfCarEngine, Owner);
+                "Yamaha G19", "William Adams");
 
-            AdamsGolfCar.GetInfoAboutGolfCar();
-            BattlestarGalactia.GetInfoAboutBattlestarGalactica();
-
+            AdamsGolfCar.PrintInfoAboutGolfCar();
+            BattlestarGalactia.PrintInfoAboutBattlestarGalactia();
 
             BattlestarGalactia.Accelerate();
-            AdamsGolfCar.Accelerate();
-                      
-            Console.ReadKey();
+            AdamsGolfCar.Accelerate();            
         }
     }
 }

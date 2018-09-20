@@ -2,38 +2,32 @@
 
 namespace HEM03.Domain
 {
-    class GolfCar : SpaceVehicle
+    class GolfCar : Vehicle
     {
-
-        public string GolfCarColor { get; }
-        private OwnerOfSpaceVehicles Owner;
-        private Engine Engine;
-
+        public string Color { get; set; }
+     
         public GolfCar(string model, string registrationNumber,
-            string golfCarColor, Engine engineType, OwnerOfSpaceVehicles owner)
-            : base(model, registrationNumber)
+            string color, string engineType, string owner)
+            : base(model, registrationNumber, engineType, owner)
         {
-            GolfCarColor = golfCarColor;
-            Owner = owner;
-            Engine = engineType;  
+            Color=color;
         }
 
-        public void GetInfoAboutGolfCar() //info about golfcar
+        public void PrintInfoAboutGolfCar() 
         {
-            Console.WriteLine("This is info about the GolfCar: ");
-            Console.WriteLine("Owner: " + Owner.Owner);
-            Console.WriteLine("Colour: " + GolfCarColor);
-            Console.WriteLine("Registration number: " + RegistrationNumber);
-            Console.WriteLine("Model: " + Model);
-            Console.WriteLine("Engine type: " + Engine.EngineType);
+            Console.WriteLine("====This is info about the GolfCar==== ");
+            Console.WriteLine($"Owner: {Owner}");
+            Console.WriteLine($"Colour: {Color}");
+            Console.WriteLine($"Registration number: {RegistrationNumber}");
+            Console.WriteLine($"Model: {Model}");
+            Console.WriteLine($"Engine type: {EngineType}");
             Console.WriteLine(" ");
         }
 
 
-        public void Accelerate() //increase engine speed and prompt the passenger
+        public override void Accelerate() 
         {
-            Engine.RaiseSpeed();
-            Console.WriteLine("Sit back and enjoy. Remember the speed limit, but in a golfcar" +
+            Console.WriteLine(" The Golfcar will now accelerate! Sit back and enjoy. Remember the speed limit, but in a golfcar" +
                 " this might not be a problem...!");
         }
     }
