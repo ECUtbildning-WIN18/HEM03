@@ -6,14 +6,14 @@ namespace HEM03.Domain
 {
     class GolfCar : Vehicle
     {
+        
+        public string Engine { get; }
+        public string Color { get; }
 
-        string Owner { get; }
-        string Engine { get; }
-
-        public GolfCar(string owner, string engine) : base("Golf Car", "ABC123")
+        public GolfCar(string engine, string color) : base("Golf Car", "ABC123")
         {
-            Owner = owner;
             Engine = engine;
+            Color = color;
         }
 
         public void Power()

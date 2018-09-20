@@ -7,19 +7,25 @@ namespace HEM03
     {
         static void Main(string[] args)
         {
+            Persons Persons = new Persons("Adama", "Saul Tigh");
 
-            Galactica Galactica = new Galactica("Adama", "FTL");
+            Galactica Galactica = new Galactica("FTL");
+            
 
-            Console.WriteLine(Galactica.Model + " " + Galactica.Owner + " " + Galactica.RegistrationNumber);
+            GolfCar GolfCar = new GolfCar("Yamaha G19", "Green");
 
+            Console.WriteLine("Commander of Galactica: " + Persons.Commander);
+            Console.WriteLine("2nd In command of Galactica: " + Persons.FirstMate);
+            Console.WriteLine("Ship model: " + Galactica.Model +
+                "\nShip registrationnumber: " + Galactica.RegistrationNumber +
+                "\n\nThe toasters is coming! we need to increase power of Galactica");
             Galactica.Power();
-
-
-            GolfCar GolfCar = new GolfCar("Adama", "Yamaha G19");
-
-            Console.WriteLine(GolfCar.Model + " " + GolfCar.RegistrationNumber);
-
+            
+            Console.WriteLine("\n\nSaul! Get my golfcar!. Its the " + GolfCar.Color + " " + "one");
+            Console.WriteLine("push the " + GolfCar.Engine + " " + "i need it fast!");
             GolfCar.Power();
+
+            
 
         }
     }

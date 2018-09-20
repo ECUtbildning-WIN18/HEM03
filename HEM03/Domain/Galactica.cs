@@ -8,12 +8,10 @@ namespace HEM03.Domain
     {
         public string Owner { get; }
         public string Engine { get; }
-        
 
-        public Galactica(string owner, string engine) : base("Battlestar", "Leet1337")
+        public Galactica(string engine) : base("Battlestar", "Leet1337")
         {
             Engine = engine;
-            Owner = owner;
         }
 
         public void Power()
