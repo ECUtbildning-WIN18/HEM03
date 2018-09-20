@@ -8,12 +8,13 @@ namespace HEM03.Domain
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Rank { get; set; }
         public string Color { get; set; }
-    }
 
-    public ClassNamePlaceholder()
-    {
-
-    }
+        public Person(string firstName, string lastName, string color)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Color = color;
+        }     
+    }   
 }
