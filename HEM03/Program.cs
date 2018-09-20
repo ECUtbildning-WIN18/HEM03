@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HEM03.Domain;
+using System;
 
 namespace HEM03
 {
@@ -6,7 +7,20 @@ namespace HEM03
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            Galactica Galactica = new Galactica("Adama", "FTL");
+
+            Console.WriteLine(Galactica.Model + " " + Galactica.Owner + " " + Galactica.RegistrationNumber);
+
+            Galactica.Power();
+
+
+            GolfCar GolfCar = new GolfCar("Adama", "Yamaha G19");
+
+            Console.WriteLine(GolfCar.Model + " " + GolfCar.RegistrationNumber);
+
+            GolfCar.Power();
+
         }
     }
 }
