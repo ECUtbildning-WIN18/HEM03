@@ -4,20 +4,19 @@ using System.Text;
 
 namespace Inheritance.Domain
 {
-    class Vehicle : Engine
+    class Vehicle
     {
-        string Model { get; }
-        string RegistrationNumber { get; }
-        bool CupHolder { get; }
+        private string Owner { get; }
+        private string Model { get; }
+        private string RegistrationNumber { get; }
+        private bool CupHolder { get; }
 
-        public Vehicle(string serialnumber, bool powerswitch, string model, string regnumber, bool cupholder)
-                       : base(serialnumber, powerswitch)
-        // Here we inherit serialnumber and powerswitch from the Engine Class
+        public Vehicle(string owner, string model, string registrationNumber, bool cupHolder)
         {
+            Owner = owner;
             Model = model;
-            RegistrationNumber = regnumber;
-            CupHolder = cupholder;
-            // Now our Vehicles are constructed with Engines!
+            RegistrationNumber = registrationNumber;
+            CupHolder = cupHolder;
         }
     }
 }

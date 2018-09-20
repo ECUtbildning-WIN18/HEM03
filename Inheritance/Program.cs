@@ -6,13 +6,14 @@ namespace Inheritance
     {
         static void Main(string[] args)
         {
-            Ship MyTestShip = new Ship("E:987654",false,"X-Wing Fighter","9001010",true,"Luke","Skywalker","Blue" );
-            MyTestShip.EngineSwitchMode(); // The ship can tell its engine to turn on or off
-            MyTestShip.Accelerate();       // And it can tell its engine to Accelerate
-            Console.ReadLine();            // even though they are methods of a different Class!
-            GolfCar MyEpicGolfCar = new GolfCar("GC:912345",false, "EpicGolfCar", "987654",true,"Admiral Akbar");
-            MyEpicGolfCar.EngineSwitchMode(); // Same as above
-            MyEpicGolfCar.Accelerate();
+            Person Commander = new Person("Luke","Skywalker","Blue");
+            Ship LukesXwing = new Ship("Luke Skywalker", "X-Wing", "901109", true, "12345", false, Commander);
+            LukesXwing.EnginePowerOn();           // Turns on the Ships Engine
+            LukesXwing.Accelerate();             // And it can tell its engine to Accelerate ( Engine needs to be on for this :p)
+            Console.ReadLine();                  // even though they are methods of a different Class!
+            GolfCart VadersGolfCart = new GolfCart("Darth Vader","TheTradgedyOfDarthPlageusTheWise123","66",true,"661", false);
+            VadersGolfCart.EnginePowerOn(); // Same as above
+            VadersGolfCart.Accelerate();
             Console.ReadLine();
         }
     }
