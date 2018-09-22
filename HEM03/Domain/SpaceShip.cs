@@ -8,16 +8,15 @@ namespace HEM03.Domain
     {
         
         public Person FirstMate { get; }
+        public FTL Ftl { get; }
+        
          
-
-        public SpaceShip(Person firstMate, string regNumber, Person owner) : base(regNumber,"Galactica",owner, new Engine(100, "FTL"))
+        // Den tar in "FTL" som Engine tack vare att FTL ärver av Engine.
+        public SpaceShip(Person firstMate, string regNumber, Person owner, FTL ftl) : base(regNumber,"Galactica",owner, ftl)
         {
             FirstMate = firstMate;
+            Ftl = ftl;
         }
 
-        public void Lightspeed()
-        {
-            int Output = 1000;
-        }
     }
 }

@@ -7,8 +7,7 @@ namespace HEM03.Domain
     class Engine
     {
         public int Output { get; set; }
-        private string Model { get; }
-
+        public string Model { get; }
         
 
         public Engine(int output, string model)
@@ -16,5 +15,7 @@ namespace HEM03.Domain
             Output = output;
             Model = model;
         }
+
+
     }
 }
