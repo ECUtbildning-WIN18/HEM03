@@ -6,7 +6,7 @@ namespace HEM03.Domain
 {
     class Commander : Person
     {
-        public string Rank { get; } = "Chief Mate";
+        public string Rank { get; } = "Commander";
 
         public Commander(string firstName, string lastName, string color)
             : base(firstName, lastName, color)
@@ -15,7 +15,7 @@ namespace HEM03.Domain
 
         public void Comanding()
         {
-            Console.WriteLine("Next destination is...blablaBLA!");
+            Console.WriteLine("Next destination is...that black hole over there!");
         }
     }
 }

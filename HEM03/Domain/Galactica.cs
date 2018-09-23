@@ -19,7 +19,9 @@ namespace HEM03.Domain
                   color,
                   owner)
         {
-            Engine = new Engine(987654, 905000, "Hypersonic", true);
+            Random rnd = new Random();
+            int currentMotorMood = rnd.Next(500000, 1000000);
+            Engine = new Engine(987654, currentMotorMood, "Hypersonic", true);
             SeatBelt = true;
         }
 
@@ -32,12 +34,14 @@ namespace HEM03.Domain
         {
             Engine.IncreasePower();
             Speed = Engine.Output * 3;
+            Console.Write("Accelerating, ");
         }
 
         public void Brake()
         {
             Engine.DecreasePower();
             Speed = Engine.Output / 3;
+            Console.Write("Braking, ");
         }
     }
 }

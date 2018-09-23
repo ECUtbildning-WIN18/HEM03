@@ -27,12 +27,14 @@ namespace HEM03.Domain
         {
             Engine.IncreasePower();
             Speed = Engine.Output * 3;
+            Console.Write("Pedal to the metal, ");
         }
 
         public void Brake()
         {
             Engine.DecreasePower();
             Speed = Engine.Output / 3;
+            Console.Write("Instant decelerating, ");
         }
     }
 }

@@ -25,18 +25,12 @@ namespace HEM03.Domain
 
         public void IncreasePower()
         {
-            if (HasFasterThanLightDrive)
-                Output *= 10;
-            else
-                Output += 1;
+            Output = HasFasterThanLightDrive ? Output * 10 : Output + 1;
         }
 
         public void DecreasePower()
         {
-            if (HasFasterThanLightDrive)
-                Output = Output / 10;
-            else
-                Output -= 1;
+            Output = HasFasterThanLightDrive ? Output / 10 : Output - 1;
         }
     }
 }

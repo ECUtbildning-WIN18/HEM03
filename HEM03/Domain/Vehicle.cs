@@ -11,7 +11,7 @@ namespace HEM03.Domain
         public Engine Engine { get; protected set; }
         public string Color { get; }
         public Person Owner { get; }
-        public int Speed { get; protected set; } = 0;
+        public int Speed { get; protected set; }
 
         public Vehicle(
             string model, 
@@ -24,6 +24,14 @@ namespace HEM03.Domain
             RegistrationNumber = registrationNumber;
             Color = color;
             Owner = owner;     
-        }    
+        }
+
+        public void PrintVehicleData()
+        {
+            Console.WriteLine($"Model: {Model}");
+            Console.WriteLine($"Registration number: {RegistrationNumber}");
+            Console.WriteLine($"Favorite color: {Color}");
+            Console.WriteLine($"Owner: {Owner.FirstName} {Owner.LastName}");
+        }
     }
 }
