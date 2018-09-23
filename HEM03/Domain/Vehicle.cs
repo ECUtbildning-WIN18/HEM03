@@ -6,8 +6,8 @@ namespace HEM03.Domain
 {
     class Vehicle
     {
-        public string registrationNumber { get; private set; }
-        private string model { get; }
+        public string RegistrationNumber { get; private set; }
+        private string model;
         private Engine engine;
         private HashSet<int> permisions = new HashSet<int>();
 
@@ -15,7 +15,7 @@ namespace HEM03.Domain
         {
             engine = new Engine(engineType);
             this.model = model;
-            this.registrationNumber = registrationNumber;
+            RegistrationNumber = registrationNumber;
         }
 
         public void AddPermission(int crewMemberId)
@@ -25,7 +25,7 @@ namespace HEM03.Domain
 
         public void Navigate(Action action, CrewMember crewMember)
         {
-            if(CheckPermission(crewMember.crewMemberId))
+            if(CheckPermission(crewMember.CrewMemberId))
             {
                 if(action == Action.Gas)
                 {

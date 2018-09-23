@@ -6,22 +6,22 @@ namespace HEM03.Domain
 {
     class CrewMember
     {
-        public string name { get; private set; }
-        public string trivia { get; set; }
-        private string rank;
-        public int crewMemberId { get; set; }
+        public string Name { get; private set; }
+        public string Trivia { get; set; }
+        private readonly string rank;
+        public int CrewMemberId { get; set; }
         
         public CrewMember(string name, string rank)
         {
-            this.name = name;
+            Name = name;
             this.rank = rank;
-            trivia = "No info";
-            crewMemberId = -1;
+            Trivia = "No info";
+            CrewMemberId = -1;
         }
 
         public void AddVehiclePermission(Vehicle vehicle)
         {
-            vehicle.AddPermission(crewMemberId);     
+            vehicle.AddPermission(CrewMemberId);     
         }
 
     }
