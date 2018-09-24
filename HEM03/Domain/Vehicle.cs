@@ -10,7 +10,6 @@ namespace HEM03.Domain
         public string Model { get; }
         public Person Owner { get; }
         private Engine Engine { get; }
-        public int Speed { get; private set; }
 
         public Vehicle(string regNumber, string model, Person owner, Engine engine)
         {
@@ -23,12 +22,7 @@ namespace HEM03.Domain
         //kommer åt Engine.output för att det är deklarerat i Engine-klassen.
         public void Accelerate()
         {
-            Speed = Engine.Output;
-        }
-
-        public void Break()
-        {
-            Speed = 0;
+            Engine.IncreaseOutput();
         }
     }
 }

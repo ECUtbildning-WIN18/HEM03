@@ -6,16 +6,24 @@ namespace HEM03.Domain
 {
     class Engine
     {
-        public int Output { get; set; }
+        public uint Output { get; private set; }
         public string Model { get; }
+        public uint MaxOutput { get; private set; }
         
-
-        public Engine(int output, string model)
+        public Engine(uint maxOutput, string model)
         {
-            Output = output;
+            MaxOutput = maxOutput;
             Model = model;
         }
 
+        public void IncreaseOutput()
+        {
+            Output += 100;
 
+            if (Output >= MaxOutput)
+            {
+                Output = MaxOutput;
+            }
+        }
     }
 }

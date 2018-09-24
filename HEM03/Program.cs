@@ -19,9 +19,10 @@ namespace HEM03
             Console.WriteLine(GolfCar.Model);
 
             Galactica.Accelerate();
+            Galactica.Accelerate();
             GolfCar.Accelerate();
 
-            Console.WriteLine(GolfCar.Speed.ToString() + "  " + Galactica.Speed.ToString());
+            Console.WriteLine(GolfCar.Yamaha.Output.ToString() + "  " + Galactica.Ftl.Output.ToString());
 
         }
     }
