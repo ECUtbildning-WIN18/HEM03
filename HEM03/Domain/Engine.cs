@@ -8,6 +8,14 @@ namespace HEM03.Domain
     {
         public string Model { get; set; }
         public int SerialNumber { get; set; }
+        public string Type { get; set; }
+
+        public Engine(string model, int serialNumber, string type)
+        {
+            Model = model;
+            SerialNumber = serialNumber;
+            Type = type;
+        }
 
 
     }

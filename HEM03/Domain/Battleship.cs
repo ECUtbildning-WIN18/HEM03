@@ -4,21 +4,20 @@ using System.Text;
 
 namespace HEM03.Domain
 {
-    class Battleship
+    class Battleship : Vehicle
     {
-        public string Engine { get; set; }
-        public int RegNumber { get; set; }
-        public string Model { get; set; }
-        
 
-        public Battleship(string engine, int regNumber, string model)
+        public Battleship(string regNumber, string brand, string color,
+            Owner owner, Engine engine)
+            : base(regNumber, brand, color,owner, engine)
         {
-            Engine = engine;
-            RegNumber = regNumber;
-            Model = model;
-            
-        }
 
+        }
+        public void Acceleration()
+        {
+            Console.WriteLine("Power! ");
+        }
+            
 
     }
 }

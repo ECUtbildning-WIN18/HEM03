@@ -4,21 +4,19 @@ using System.Text;
 
 namespace HEM03.Domain
 {
-    class GolfCar
+    class GolfCar : Vehicle
     {
-        public string Engine { get; set; }
-        public int RegNumber { get; set; }
-        public string Model { get; set; }
         
-
-        public GolfCar(string engine, int regNumber, string model)
+        public GolfCar(string regNumber, string brand,string color,
+            Owner owner, Engine engine)
+            : base(regNumber, brand, color,owner, engine)
         {
-            Engine = engine;
-            RegNumber = regNumber;
-            Model = model;
-           
-        }
 
+        }
+        public void Acceleration()
+        {
+            Console.WriteLine("Brrrr ! ");
+        }
 
 
     }
