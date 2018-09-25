@@ -4,8 +4,8 @@ using System.Text;
 
 namespace HEM03.Domain
 {
-    
     public enum Action { Gas, Break};
+
     class ShipControlSystem
     {
         public Dictionary<int,CrewMember> CrewMembers { get; private set; }
@@ -37,6 +37,7 @@ namespace HEM03.Domain
         {
             return CrewMembers[crewMemberId];
         }
+
         public int GetCrewMemberId(string name)
         {
             foreach(KeyValuePair<int, CrewMember> crewMember in CrewMembers)
@@ -48,6 +49,7 @@ namespace HEM03.Domain
             }
             return -1;
         }
+
         public Vehicle GetVehicle(string registrationNumber)
         {
             return Vehicles[registrationNumber];

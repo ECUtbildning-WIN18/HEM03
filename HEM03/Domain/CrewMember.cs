@@ -23,6 +23,5 @@ namespace HEM03.Domain
         {
             vehicle.AddPermission(CrewMemberId);     
         }
-
     }
 }

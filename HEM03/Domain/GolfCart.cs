@@ -8,7 +8,6 @@ namespace HEM03.Domain
     {
         public GolfCart(string model, string registrationNumber, EngineTypes engineType) : base(model, registrationNumber, engineType)
         {
-
         }
 
         public override string GetVehicleType()
