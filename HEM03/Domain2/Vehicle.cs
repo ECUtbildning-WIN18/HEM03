@@ -20,13 +20,6 @@ namespace HEM03.Domain2
             Owner = owner;
             Driver = driver;
         }
-        //public void GiveGas(bool gas)
-        // {
-        //     if (gas == true)
-        //         Console.WriteLine("Speeeeeeeeeeeeeeeeed !!!!");
-        //     else
-        //         Console.WriteLine("Steady pace.");
-        // }
     }
 
 }
