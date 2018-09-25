@@ -10,6 +10,7 @@ namespace HEM03.Domain
         public string RegNumber { get; }
         public string Brand { get; }
         public string Color { get; set; }
+
         public Owner Owner { get; set; }
         public Engine Engine { get;}
         
@@ -24,5 +25,16 @@ namespace HEM03.Domain
             Engine = engine;
         }
         
+
+
+
+        public virtual void Test()
+        {
+            Console.WriteLine("sound");
+        }
+
+
+
+
     }
 }

@@ -17,6 +17,13 @@ namespace HEM03.Domain
         {
             Console.WriteLine("Power! ");
         }
+
+
+
+        public override void Test()
+        {
+            Console.WriteLine("Battleship sound");
+        }
             
 
     }

@@ -19,5 +19,11 @@ namespace HEM03.Domain
         }
 
 
+
+        public override void Test()
+        {
+            Console.WriteLine("GolfCar sound ");
+        }
+
     }
 }
