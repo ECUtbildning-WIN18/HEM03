@@ -7,20 +7,20 @@ namespace HEM03.Domain
     class Vehicle
     {
         public string RegistrationNumber { get; private set; }
-        private string model;
-        private Engine engine;
-        private HashSet<int> permisions = new HashSet<int>();
+        private string Model;
+        private Engine Engine;
+        private HashSet<int> Permisions = new HashSet<int>();
 
         public Vehicle(string model,string registrationNumber,EngineTypes engineType)
         {
-            engine = new Engine(engineType);
-            this.model = model;
+            Engine = new Engine(engineType);
+            Model = model;
             RegistrationNumber = registrationNumber;
         }
 
         public void AddPermission(int crewMemberId)
         {
-            permisions.Add(crewMemberId);
+            Permisions.Add(crewMemberId);
         }
 
         public void Navigate(Action action, CrewMember crewMember)
@@ -29,11 +29,11 @@ namespace HEM03.Domain
             {
                 if(action == Action.Gas)
                 {
-                    engine.Gas((int)engine.engineType * 9 + 1);
+                    Engine.Gas((int)Engine.EngineType * 9 + 1);
                 }
                 if(action == Action.Break)
                 {
-                    engine.Break((int)engine.engineType * 4 + 1);
+                    Engine.Break((int)Engine.EngineType * 4 + 1);
                 }
             }
             else
@@ -44,7 +44,7 @@ namespace HEM03.Domain
         
         private bool CheckPermission(int crewMemberId)
         {
-            return permisions.Contains(crewMemberId);
+            return Permisions.Contains(crewMemberId);
         }
 
         public virtual string GetVehicleType()

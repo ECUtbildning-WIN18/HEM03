@@ -8,43 +8,43 @@ namespace HEM03.Domain
 
     class Engine
     {
-        public EngineTypes engineType { get; private set; }
-        private float maxVelocity;
-        private float currentVelocity;
+        public EngineTypes EngineType { get; private set; }
+        private float MaxVelocity;
+        private float CurrentVelocity;
 
         public Engine(EngineTypes engineType)
         {
-            this.engineType = engineType;
-            maxVelocity = (float)engineType * 999 + 1;
-            currentVelocity = 0;
+            EngineType = engineType;
+            MaxVelocity = (float)engineType * 999 + 1;
+            CurrentVelocity = 0;
         }
 
         public void Gas(float velocityIncrement)
         {
-            if (currentVelocity != maxVelocity)
+            if (CurrentVelocity != MaxVelocity)
             {
-                if (currentVelocity + velocityIncrement < maxVelocity)
+                if (CurrentVelocity + velocityIncrement < MaxVelocity)
                 {
-                    currentVelocity += velocityIncrement;
+                    CurrentVelocity += velocityIncrement;
                 }
                 else
                 {
-                    currentVelocity = maxVelocity;
+                    CurrentVelocity = MaxVelocity;
                 }
             }
         }
 
         public void Break(float velocityDecrement)
         {
-            if (currentVelocity == 0)
+            if (CurrentVelocity == 0)
             {
-                if (currentVelocity - velocityDecrement <= 0)
+                if (CurrentVelocity - velocityDecrement <= 0)
                 {
-                    currentVelocity = 0;
+                    CurrentVelocity = 0;
                 }
                 else
                 {
-                    currentVelocity -= velocityDecrement;
+                    CurrentVelocity -= velocityDecrement;
                 }
             }
         }

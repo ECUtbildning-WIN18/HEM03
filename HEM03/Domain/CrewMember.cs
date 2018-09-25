@@ -8,13 +8,13 @@ namespace HEM03.Domain
     {
         public string Name { get; private set; }
         public string Trivia { get; set; }
-        private readonly string rank;
+        private readonly string Rank;
         public int CrewMemberId { get; set; }
         
         public CrewMember(string name, string rank)
         {
             Name = name;
-            this.rank = rank;
+            this.Rank = rank;
             Trivia = "No info";
             CrewMemberId = -1;
         }
